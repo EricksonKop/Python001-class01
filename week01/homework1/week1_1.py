@@ -13,8 +13,6 @@ for movie in movies:
     film_type = movie.find('div', attrs={'class': 'movie-hover-title'})[1].text
     film_time = movie.find('div', attrs={'class': 'movie-hover-title'})[3].text
     movies_list.append([title, film_type, film_time])
-# df = pd.DataFrame(data=movies_list)
-# df.to_csv("./test_work1.csv", encoding="utf-8-sig", mode="a+", header=False, index=False)
 with open('test_work1.csv', 'a+') as f:
     for info in movies_list:
         f.write(','.join(info) + ',\n')
